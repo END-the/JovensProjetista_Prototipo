@@ -1,0 +1,115 @@
+*{
+    background-color:black;
+    color:white;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight:normal;
+}
+
+.font_red{
+    color: #D12C2F;
+    
+}
+
+header{
+    height: 10vh;
+    max-width: 100%;
+    display: flex;
+    justify-content:space-between;  
+    padding: 2vh;
+    border-bottom: 3vh solid #d12c2f6e;
+    margin-left: -1vh
+}
+#header_menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#header_menu a{
+    text-decoration: none;
+    margin-left: 2vh;
+    border-right: 0.5vh solid #D12C2F;
+    padding: 2vh;
+}
+#header_menu a:last-child{
+    border-right: 0.5vh solid #000000;
+}
+.header_menu_link:hover{
+    color: #D12C2F;
+}
+#logo_comprido_header{
+    height: 8vh;
+}
+#header_linha_corte{
+    border-bottom: 1.5vh solid #d12c2f6e;
+    margin-left: -1vh;
+    margin-top:2vh
+}
+
+
+.jovens, .casedesucesso{
+    padding:15vh;;
+    padding-top: 13vh;
+    display: flex;
+    justify-content:space-between;  
+    border-top: 1.5vh solid #d12c2f6e;
+    margin-left: -1vh;
+    margin-top: 3vh
+
+}
+#jovens_parteescrita{
+    width: 40%;
+}
+#jovens_parteescrita_texto{
+    line-height: 1.8;
+    font-size: large;
+}
+
+h1{
+    font-weight:bolder;
+}
+#jovens_parteescrita h2{
+    font-size: 5vh;
+    margin-top: -6vh;
+    padding-left: 7vh;
+    width: 180vh;
+}
+#jovens_parteescrita h2:after {
+    content: "";
+    margin-top: -3vh;
+    margin-left: 25vh;
+    display: block;
+    width: 160vh;
+    height: 0.5vh;
+    background: #D12C2F;
+    position: absolute;
+}
+
+#jovens_parteescrita_frase{
+    background-color: #D12C2F;
+    margin-top: 10vh;
+    padding: 2vh;
+    width: 90vh;
+    color: #000;
+    margin-left: -20vh;
+    text-align: right;
+    border-radius: 2vh;
+}
+#jovens_foto_equipe{
+    height: 70vh;
+    margin-top: 4vh;
+}
+
+
+.casedesucesso{
+    display: flex;
+    align-items: center;
+    border-top: 1.5vh solid #0000006e;
+}
+
+#downloadportfolio{
+    padding: 4vh;
+    height: 6vh;
+    background-color: #D12C2F;
+}

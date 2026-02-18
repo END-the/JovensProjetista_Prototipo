@@ -1,5 +1,8 @@
-*{
+body{
+    
     background-color:black;
+}
+*{
     color:white;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
@@ -14,13 +17,15 @@
 
 header{
     height: 10vh;
-    max-width: 100%;
     display: flex;
     justify-content:space-between;  
     padding: 2vh;
-    border-bottom: 3vh solid #d12c2f6e;
-    margin-left: -1vh
+    border-bottom: 3vh solid #d12c2f9d;
+    margin-left: -1vh;
+    
+    
 }
+
 #header_menu{
     display: flex;
     justify-content: center;
@@ -55,27 +60,51 @@ header{
     justify-content:space-between;  
     border-top: 1.5vh solid #d12c2f6e;
     margin-left: -1vh;
-    margin-top: 3vh
+    margin-top: 3vh;
+    position: relative;
 
 }
-#jovens_parteescrita{
+.jovens_parteescrita{
+    z-index: 2;
     width: 40%;
+    
 }
-#jovens_parteescrita_texto{
+.jovens_parteescrita_texto{
     line-height: 1.8;
     font-size: large;
+    text-shadow:
+                -2px -2px 0 #000,
+                2px -2px 0 #000,
+                -2px 2px 0 #000,
+                2px 2px 0 #000,
+                -3px 0px 0 #000,
+                3px 0px 0 #000,
+                0px -3px 0 #000,
+                0px 3px 0 #000;
+        
 }
 
 h1{
     font-weight:bolder;
+     text-shadow:
+                -2px -2px 0 #000,
+                2px -2px 0 #000,
+                -2px 2px 0 #000,
+                2px 2px 0 #000,
+                -3px 0px 0 #000,
+                3px 0px 0 #000,
+                0px -3px 0 #000,
+                0px 3px 0 #000;
+    
+    
 }
-#jovens_parteescrita h2{
+.jovens_parteescrita h2{
     font-size: 5vh;
     margin-top: -6vh;
     padding-left: 7vh;
     width: 180vh;
 }
-#jovens_parteescrita h2:after {
+.jovens_parteescrita h2:after {
     content: "";
     margin-top: -3vh;
     margin-left: 25vh;
@@ -83,7 +112,7 @@ h1{
     width: 160vh;
     height: 0.5vh;
     background: #D12C2F;
-    position: absolute;
+    
 }
 
 #jovens_parteescrita_frase{
@@ -99,6 +128,8 @@ h1{
 #jovens_foto_equipe{
     height: 70vh;
     margin-top: 4vh;
+    
+    z-index: 2;
 }
 
 
@@ -111,5 +142,119 @@ h1{
 #downloadportfolio{
     padding: 4vh;
     height: 6vh;
+    align-content: center;
     background-color: #D12C2F;
+    border: 0.5vh  solid black;
+    border-radius: 2vh;
+    text-decoration: none;
+    margin-bottom: 2vh;
+    margin-top: 4vh;
+}
+#downloadportfolio:hover{
+    background-color: black;
+    color: #D12C2F;
+    border: 0.5vh  solid #D12C2F;
+    border-radius: 2vh;
+}
+
+
+
+
+
+#garra, #garra2, #garra3 {
+    height:40vh;
+    margin-top: 47vh;
+    position: absolute;
+    float: right;
+    opacity: 0.2;
+    z-index: 1;
+    
+}
+#garra{
+    right: 0vh;
+}
+#garra2{
+    margin-left: -20vh;  
+    height:70vh; 
+    margin-top: -7vh;
+    z-index: -1;
+}
+#garra3{
+    height:100vh;
+    right:0;
+    margin-top: -45vh;
+    z-index: -1;    
+}
+
+
+#carrosel{
+    position: relative;
+    height: 233px;
+    margin-bottom: 30px;
+    display: flex;
+    width: fit-content;
+    gap: 20px;
+}
+
+#carrosel img {
+  margin: 0px 0px;
+}
+
+#carrosel {
+  animation: bannermove 50s linear infinite;
+}
+
+
+
+@-webkit-keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
+  }
+}
+.jovens_slider {
+    
+    height: 50vh;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width:250vh
+}
+.jovens_slider::before, .jovens_slider::after {
+    background: linear-gradient(to right, rgb(0, 0, 0) 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height:50vh; 
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+}
+.jovens_slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+.jovens_slider::before {
+    left: 0;
+    top: 0;
+}
+.jovens_slider .jovens_slider_track {
+    -webkit-animation: scroll 20s linear infinite;
+          animation: scroll 20s linear infinite;
+    display: flex;
+    width: calc(5vh);
+}
+.jovens_slider .jovens_slider_track_slide {
+    width: 50vh; 
+    
 }

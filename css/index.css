@@ -36,6 +36,7 @@ header{
     margin-left: 2vh;
     border-right: 0.5vh solid #D12C2F;
     padding: 2vh;
+    font-size: 3vh;
 }
 #header_menu a:last-child{
     border-right: 0.5vh solid #000000;
@@ -71,7 +72,7 @@ header{
 }
 .jovens_parteescrita_texto{
     line-height: 1.8;
-    font-size: large;
+    font-size: 3vh;
     text-shadow:
                 -2px -2px 0 #000,
                 2px -2px 0 #000,
@@ -86,6 +87,7 @@ header{
 
 h1{
     font-weight:bolder;
+    font-size: 5vh;
      text-shadow:
                 -2px -2px 0 #000,
                 2px -2px 0 #000,
@@ -128,7 +130,7 @@ h1{
 #jovens_foto_equipe{
     height: 70vh;
     margin-top: 4vh;
-    
+    margin-left: 2vh;
     z-index: 2;
 }
 
@@ -258,3 +260,43 @@ h1{
     width: 50vh; 
     
 }
+
+
+/* VERSAO CELULAR */
+
+@media (max-width: 900px) {
+  .jovens {
+    display: block;
+    align-items: center;
+    }
+  .jovens_parteescrita {
+        width: 100%;
+        margin-bottom: 5vh;
+    }
+    .jovens_parteescrita_texto{
+        font-size: 3vh;
+        
+    }
+    h1{
+        float: none;
+    }
+    #downloadportfolio{
+        position: absolute;
+        margin-left: 87vh;
+        margin-top: -2vh;
+    }
+    .jovens_slider{
+        width: 100%;
+    }
+    #garra{
+        opacity: 0;
+    }
+}
+/* 
+@media (min-width: 768px) {
+  .header {grid-area: 1 / span 6;}
+  .menu {grid-area: 2 / span 1;}
+  .content {grid-area: 2 / span 4;}
+  .facts {grid-area: 2 / span 1;}
+  .footer {grid-area: 3 / span 6;}
+} */

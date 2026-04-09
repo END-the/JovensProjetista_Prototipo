@@ -1,5 +1,5 @@
 body{
-    
+    overflow-x: hidden;
     background-color:black;
 }
 *{
@@ -21,8 +21,7 @@ header{
     justify-content:space-between;  
     padding: 2vh;
     border-bottom: 3vh solid #d12c2f9d;
-    margin-left: -1vh;
-    
+    margin-left: 0;
     
 }
 
@@ -54,8 +53,8 @@ header{
 }
 
 
-.jovens, .casedesucesso{
-    padding:15vh;;
+.jovens, .casedesucesso, .jovens_org{
+    padding:15vh;
     padding-top: 13vh;
     display: flex;
     justify-content:space-between;  
@@ -64,6 +63,14 @@ header{
     margin-top: 3vh;
     position: relative;
 
+}
+.jovens_org{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5vh;
+    text-align: center;
 }
 .jovens_parteescrita{
     z-index: 2;
@@ -104,7 +111,7 @@ h1{
     font-size: 5vh;
     margin-top: -6vh;
     padding-left: 7vh;
-    width: 180vh;
+    width: 100%;
 }
 .jovens_parteescrita h2:after {
     content: "";
@@ -121,26 +128,78 @@ h1{
     background-color: #D12C2F;
     margin-top: 10vh;
     padding: 2vh;
-    width: 90vh;
+    width: fit-content;
+    margin-left: -15vh; /* adjust based on your section padding */
+    text-align: left;
+    border-radius: 0 2vh 2vh 0;
     color: #000;
-    margin-left: -20vh;
-    margin-right: 20vh;
-    text-align: right;
-    border-radius: 2vh;
 }
-#jovens_foto_equipe{
-    height: 70vh;
-    margin-top: 4vh;
-    margin-left: 2vh;
+
+
+.jovens_invisivel_foto_projetos, #jovens_foto_equipe{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+#jovens_foto_equipe {
+    height: 70vh; 
+    margin: 6vh; 
+    right:0;
     z-index: 2;
+    max-width: 100%;
+}
+#jovens_foto_org{
+    height:80vh;
 }
 
+#jovens_invisivel{ 
+    border: 0vh; 
+    margin-top: -23vh; 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+}
+.img_box {
+    position: relative;
+    flex: 0 0 calc(50% - 10px); /* 2 per row */
+}
 
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.7); /* dark effect */
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    transition: 0.3s;
+}
+
+/* hover effect */
+.img_box:hover .overlay {
+    opacity: 1;
+}
+.img_box img {
+    transition: transform 0.3s;
+}
+
+.img_box:hover img {
+    transform: scale(1.05);
+}
+
+/* 
 .casedesucesso{
     display: flex;
     align-items: center;
     border-top: 1.5vh solid #0000006e;
-}
+} */
 
 #downloadportfolio{
     padding: 4vh;
@@ -184,11 +243,15 @@ h1{
 }
 #garra3{
     height:100vh;
-    right:0;
-    margin-top: -45vh;
+    left:0;
+    margin-left: -20vh;
+    margin-top: -20vh;
     z-index: -1;    
 }
 
+
+
+/*
 
 #carrosel{
     position: relative;
@@ -206,8 +269,6 @@ h1{
 #carrosel {
   animation: bannermove 50s linear infinite;
 }
-
-
 
 @-webkit-keyframes scroll {
   0% {
@@ -263,9 +324,15 @@ h1{
 }
 
 
-/* VERSAO CELULAR */
+ VERSAO CELULAR */
 
 @media (max-width: 900px) {
+
+    .img_box {
+        flex: 1 1 50%;
+        align-self: center;
+        background-color: aqua;
+    }
     .jovens_parteescrita h2:after {
         width: 50vh;
     }
@@ -278,22 +345,47 @@ h1{
         margin-bottom: 5vh;
     }
     .jovens_parteescrita_texto{
-        font-size: 3vh;
-        
+        font-size: 3vh; 
+        text-align: center;
+    }
+    
+    #jovens_parteescrita_titulo{
+        margin-top: -3vh;
+        text-align: center;
     }
     h1{
         float: none;
     }
     #downloadportfolio{
-        position: absolute;
-        margin-left: 87vh;
-        margin-top: -2vh;
+        display: block;
+        margin: 4vh auto;
+        text-align: center;
+        width: fit-content;
+        position: static;
     }
     .jovens_slider{
         width: 100%;
     }
     #garra{
         opacity: 0;
+    }
+    #jovens_foto_equipe, #jovens_foto_org{
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+        margin-top: 10vh;
+        margin-bottom: -5vh;
+    }
+    #jovens_foto_org{
+    display: block;
+    margin: 5vh auto;
+    width: 100%;
+    max-width: 90vw;
+    height: auto;
+    }
+    #header_menu{
+    visibility: hidden;
     }
 }
 
@@ -308,7 +400,9 @@ h1{
     #logo_comprido_header{
         height: 6vh;
     }
-
+    #jovens_invisivel{
+        margin-top: -10vh; 
+    }
     .jovens_parteescrita h2:after {
         width: 20vh;
     }
@@ -316,10 +410,6 @@ h1{
         padding: 5vh;
     }
     
-    #jovens_foto_equipe {
-        height: 40vh;
-        margin-left: 0vh;
-    }
   .jovens_parteescrita {
         width: 100%;
         margin-bottom: 5vh;
@@ -331,20 +421,18 @@ h1{
     }
     #jovens_parteescrita_frase{
         font-size: 2vh;
-        margin-left: -35vh;
+        width: 90%;
+        text-align: center;
+        margin-left: -7vh;
     }
     h1{
         float: none;
     }
-    #downloadportfolio{
-        position: absolute;
-        margin-left: 13vh;
-        margin-top: 25vh;
-    }
-    .jovens_slider{
-        width: 100%;
-    }
     #garra{
         opacity: 0;
     }
+    #jovens_foto_org{
+    width: 100%;
+    max-width: 95vw;
+}
 }
